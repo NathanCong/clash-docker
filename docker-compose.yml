@@ -1,0 +1,8 @@
+services:
+  clash:
+    build: .
+    image: clash:latest
+    container_name: system-clash
+    restart: unless-stopped
+    network_mode: host
+    command: ["clash", "-d", "/app/"]
