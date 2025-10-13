@@ -1,0 +1,10 @@
+# 忽略编辑器配置
+.vscode/
+.idea/
+
+# 忽略 MacOS 系统文件
+.DS_Store
+
+# 忽略 Clash 不需要的文件
+cache.db
+Country.mmdb
