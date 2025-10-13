@@ -4,5 +4,8 @@ services:
     image: clash:latest
     container_name: system-clash
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - 7890:7890
+      - 7891:7891
+      - 9090:9090
     command: ["clash", "-d", "/app/"]
