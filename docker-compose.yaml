@@ -1,0 +1,14 @@
+services:
+  clash:
+    build: .
+    image: clash:latest
+    container_name: system-clash
+    restart: unless-stopped
+    volumes:
+      - ${VOLUMES_CONFIG_PATH}:/app/config
+      - ${VOLUMES_STATIC_PATH}:/app/static
+    ports:
+      - ${HTTP_PROXY_PORT}:7890
+      - ${SOCKS_PROXY_PORT}:7891
+      - ${RESTFUL_API_PORT}:9090
+    command: ["clash", "-d", "/app/config"]
